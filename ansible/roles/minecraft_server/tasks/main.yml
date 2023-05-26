@@ -1,0 +1,29 @@
+---
+- name: Start Minecraft server container
+  community.docker.docker_container:
+    name: minecraft-server
+    image: itzg/minecraft-server:stable
+    restart_policy: "no"
+    state: started
+    ports:
+      - "25565:25565"
+    volumes:
+      - "~/minecraft-server-data:/data"
+    env:
+      EULA: "true"
+      MEMORY: 64G
+      MODE: survival
+      SERVER_NAME: rapture
+      ENABLE_COMMAND_BLOCK: "false"
+      FORCE_GAMEMODE: "true"
+      HARDCORE: "false"
+      PVP: "true"
+      ICON: "https://preview.redd.it/zzef6k2dtrv61.jpg?auto=webp&s=12b2ab98eed990723c8272c15d7f479a581ff570"
+      MOD_PLATFORM: AUTO_CURSEFORGE
+      CF_API_KEY: "{{ minecraft_server__cf_api_key }}"
+      CF_PAGE_URL: "{{ minecraft_server__cf_url }}"
+
+    # Will recreate any running frontend server container
+    # that doesn't match the expected version
+    recreate: true
+    restart: false

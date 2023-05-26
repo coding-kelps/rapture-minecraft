@@ -1,0 +1,18 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: parallels
+platforms:
+  - name: ubuntu
+    box: bento/ubuntu-22.04-arm64
+    memory: 4096
+    cpus: 2
+provisioner:
+  name: ansible
+  env:
+      ANSIBLE_ROLES_PATH: ../../../roles
+verifier:
+  name: testinfra

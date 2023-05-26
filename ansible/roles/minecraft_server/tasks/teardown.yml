@@ -1,0 +1,5 @@
+---
+- name: Remove Minecraft server container
+  community.docker.docker_container:
+    name: minecraft-server
+    state: absent

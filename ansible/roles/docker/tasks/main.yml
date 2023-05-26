@@ -1,0 +1,26 @@
+---
+- name: Install docker.io package
+  become: true
+  ansible.builtin.apt:
+    name: docker.io
+    state: present
+    update_cache: true
+
+- name: Configure Docker service
+  become: true
+  ansible.builtin.systemd_service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: "Add user \"{{ docker__user }}\" to \"docker\" group"
+  become: true
+  ansible.builtin.user:
+    name: "{{ docker__user }}"
+    groups: docker
+    append: true
+
+# https://stackoverflow.com/a/44753457
+- name: Reset ssh connection to allow user changes to affect ansible user
+  ansible.builtin.meta:
+    reset_connection

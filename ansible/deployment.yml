@@ -1,0 +1,25 @@
+---
+# Deploy the whole HiVolunteer tech stack to a single server from scratch
+# To deploy a variable gcp_artifact_registry_url and gcp_artifact_registry_json_key
+# or gcp_artifact_registry_json_key_filepath should be defined (the url and key to
+# the private registry where the docker image of the api server and web server are
+# stored).
+#
+# Usage:
+#
+#   $ ansible-playbook deployment.yml
+
+# - name: Configure EC2 Instance to Deploy Kelps Frontend Server 
+#   hosts: all
+#   gather_facts: true
+#   become: true
+#   roles:
+#     - name: docker
+
+- hosts: all
+  gather_facts: false
+  roles:
+      - role: docker
+      - role: minecraft_server
+        tags:
+          - server
