@@ -19,7 +19,7 @@ terraform apply
 At applying phase, Terraform will apply all the required changes to make your infrastructure corresponds to the infrastructure described in the manifest.
 If everything works well you should see your instance running the AWS console at EC2/Instances/Instances.
 
-![EC2 shown in console](./res/ec2-in-console.png)
+![EC2 shown in console](/res/ec2-in-console.png)
 
 ### Pro Tips
 If you only want to see what changes Terraform will apply without doing them, you can run the *plan* command:
