@@ -1,5 +1,9 @@
 # AWS EC2 Instance
-I provided here a small manifest to show you an example of configuration with Terraform.
+I provided here an example of configuration with Terraform.
+
+Terraform enable us to define our desired infrastructure with configuration files. Here I've defined a Terraform module from a single configuration file named "main.tf". However, a Terraform module can be composed of multiple configuration, as long as they are in the same directory.
+
+The module that I've configured setup an AWS EC2 instance with Ubuntu as the OS.
 
 ## Requirements
   - You've installed AWS CLI on your local machine
