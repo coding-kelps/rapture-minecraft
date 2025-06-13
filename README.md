@@ -1,7 +1,8 @@
 # Rapture - Minecraft
 
-> [!NOTE] This repository is part of the Rapture project and offers  
-an example configuration for a self-hosted game server.
+> [!NOTE]
+> This repository is part of the Rapture project, which provides sample
+> configurations for setting up self-hosted game servers.
 
 This repository provides an example configuration for hosting a Minecraft server  
 on a single AWS EC2 instance. Mods can optionally be loaded from the  
