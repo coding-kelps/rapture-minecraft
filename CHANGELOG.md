@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0] - 2025-06-13
+## [0.1.0] - 2025-06-13
 
 ### ⛰️  Features
 
 - Minecraft server deploy configuration - ([944c295](https://github.com/coding-kelps/rapture-minecraft/commit/944c295e866e0d6725225ee93202c84cd0ff6372))
+
+### 📚 Documentation
+
+- *(README.md)* Correct note element - ([24d300a](https://github.com/coding-kelps/rapture-minecraft/commit/24d300aefbf75d212f72c731ac406355eff123fe))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(changelog)* Update changelog - ([88689d9](https://github.com/coding-kelps/rapture-minecraft/commit/88689d953f9e6da33b3a0807a8bc59ecf8502e9d))
 
 ## New Contributors ❤️
 
