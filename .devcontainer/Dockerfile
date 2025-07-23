@@ -8,7 +8,8 @@ RUN set -eux; \
       lsb-release \
       software-properties-common \
       unzip \
-      less;
+      less \
+      ca-certificates;
 
 ENV TERRAFORM_VERSION=1.11.4-1
 
@@ -29,15 +30,11 @@ RUN set -eux; \
     ./aws/install; \
     rm -rf aws awscliv2.zip;
 
-ENV POETRY_VERSION=2.1.2 \
-    POETRY_HOME="/opt/poetry"
+ADD https://astral.sh/uv/0.8.2/install.sh /uv-installer.sh
 
-ENV PATH="$POETRY_HOME/bin:$PATH"
+RUN sh /uv-installer.sh && rm /uv-installer.sh
 
-RUN set -eux; \
-    pip install --no-cache-dir --upgrade pip; \
-    curl -sSL https://install.python-poetry.org | python3 - --version "$POETRY_VERSION"; \
-    poetry self add poetry-plugin-shell;
+ENV PATH="/root/.local/bin/:$PATH"
 
 WORKDIR /app
 
