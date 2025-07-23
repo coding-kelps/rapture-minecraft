@@ -1,0 +1,14 @@
+---
+- name: Install podman package
+  become: true
+  ansible.builtin.apt:
+    name: podman
+    state: present
+    update_cache: true
+
+- name: Configure Podman service
+  become: true
+  ansible.builtin.systemd_service:
+    name: podman
+    state: started
+    enabled: true

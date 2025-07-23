@@ -57,8 +57,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_from_server" {
 # Define ec2 server
 resource "aws_instance" "minecraft_server" {
   ami             = "ami-045a8ab02aadf4f88"
-  # instance_type   = "c5.9xlarge"
-  instance_type   = "t3.xlarge"
+  instance_type   = "c5.9xlarge"
   security_groups = [aws_security_group.sg.name]
   key_name = aws_key_pair.kp.key_name
 

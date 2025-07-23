@@ -1,14 +1,14 @@
 ---
 - name: Start Minecraft server container
-  community.docker.docker_container:
+  containers.podman.podman_container:
     name: minecraft-server
-    image: itzg/minecraft-server:stable
+    image: registry.hub.docker.com/itzg/minecraft-server:stable
     restart_policy: "no"
     state: started
     ports:
       - "25565:25565"
     volumes:
-      - "~/minecraft-server-data:/data"
+      - "minecraft-server-data:/data"
     env:
       EULA: "true"
       MEMORY: 64G

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1](https://github.com/coding-kelps/rapture-minecraft/compare/v0.1.0..v0.1.1) - 2025-07-23
+
+### 🚜 Refactor
+
+- *(ansible)* Change container runtime from docker to podman - ([9e72f8d](https://github.com/coding-kelps/rapture-minecraft/commit/9e72f8dfbbba5a88b34a8e9cf0a3ddbeae84c55f))
+
+### 🔨 Build
+
+- *(ansible)* Replace poetry by uv for python dependencies management - ([6f3b6e4](https://github.com/coding-kelps/rapture-minecraft/commit/6f3b6e40ebe6b8c88d3323454028eb55091c57fe))
+
+## New Contributors ❤️
+
+* @ made their first contribution
+
 ## [0.1.0] - 2025-06-13
 
 ### ⛰️  Features
@@ -14,6 +28,7 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- *(changelog)* Update changelog for release v0.1.0 - ([c12b043](https://github.com/coding-kelps/rapture-minecraft/commit/c12b0439c29641a5be93510cef4854d56b0a5116))
 - *(changelog)* Update changelog - ([88689d9](https://github.com/coding-kelps/rapture-minecraft/commit/88689d953f9e6da33b3a0807a8bc59ecf8502e9d))
 
 ## New Contributors ❤️

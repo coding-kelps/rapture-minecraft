@@ -1,0 +1,13 @@
+---
+- name: Remove Podman service
+  ansible.builtin.systemd_service:
+    name: podman
+    state: stopped
+    enabled: false
+
+- name: Remove podman package
+  ansible.builtin.apt:
+    name: podman
+    state: absent
+    autoremove: true
+    purge: true
