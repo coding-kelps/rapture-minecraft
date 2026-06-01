@@ -4,10 +4,10 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.63"
+      version = ">= 6.47.0"
     }
   }
-  required_version = "~> 1.11.3"
+  required_version = "~> 1.15.5"
 
   backend "s3" {
     bucket  = "kelps-gitops"

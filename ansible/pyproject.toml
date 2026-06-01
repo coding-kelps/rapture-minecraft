@@ -1,15 +1,15 @@
 [project]
 name = "rapture-minecraft-ansible"
-version = "0.2.0"
+version = "0.2.1"
 description = "Easy self-hosted Minecraft server with Ansible."
 authors = [
     {name = "Guilhem Santé", email = "guilhem.sante@kelps.org"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 dependencies = [
-    "ansible>=11.8.0",
-    "boto3>=1.39.11",
-    "molecule>=25.6.0",
-    "pytest>=8.4.1",
+    "ansible>=13.7.0",
+    "boto3>=1.43.19",
+    "molecule>=26.4.0",
+    "pytest>=9.0.3",
 ]

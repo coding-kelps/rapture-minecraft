@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.12.10-bookworm
+FROM docker.io/library/python:3.14.5-trixie
 
 RUN set -eux; \
     apt-get update; \
@@ -6,12 +6,15 @@ RUN set -eux; \
       curl \
       gnupg \
       lsb-release \
-      software-properties-common \
       unzip \
       less \
+      direnv \
       ca-certificates;
 
-ENV TERRAFORM_VERSION=1.11.4-1
+# Direnv hook
+RUN echo 'eval "$(direnv hook bash)"' >> /root/.bashrc
+
+ENV TERRAFORM_VERSION=1.15.5-1
 
 RUN set -eux; \
     curl -fsSL https://apt.releases.hashicorp.com/gpg \
@@ -22,15 +25,15 @@ RUN set -eux; \
     apt-get update; \
     apt-get install -y --no-install-recommends terraform=${TERRAFORM_VERSION};
 
-ENV AWSCLI_V2_VERSION=2.18.11
+ENV AWSCLI_V2_VERSION=2.34.58
 
 RUN set -eux; \
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWSCLI_V2_VERSION}.zip" -o "awscliv2.zip"; \
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m)-${AWSCLI_V2_VERSION}.zip" -o "awscliv2.zip"; \
     unzip awscliv2.zip; \
     ./aws/install; \
     rm -rf aws awscliv2.zip;
 
-ADD https://astral.sh/uv/0.8.2/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.11.18/install.sh /uv-installer.sh
 
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 

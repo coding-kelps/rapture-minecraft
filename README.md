@@ -12,10 +12,10 @@ on a single AWS EC2 instance. Mods can optionally be loaded from the
 
 ### Prerequisites
 
-- python (3.12.10)
-- terraform (1.11.4-1)
-- aws-cli (2.18.11)
-- uv (0.8.2)
+- python (3.14.5)
+- terraform (1.15.5)
+- aws-cli (2.34.58)
+- uv (0.11.18)
 
 Ensure you've configured the AWS CLI (via `aws configure`) with a  
 profile that has sufficient permissions. You'll also need a CurseForge API key,  
